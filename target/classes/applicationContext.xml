@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation=" 
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+        
+         <bean id="personbean" class="com.klef.jfsd.exam.SetterDI.Person"> 
+    <constructor-arg value="1"></constructor-arg>
+    <constructor-arg value="SIRI"></constructor-arg>
+    <constructor-arg value="20.0"></constructor-arg>
+    <constructor-arg value="true"></constructor-arg>
+    <constructor-arg>
+ <list> 
+ <value>JFSD</value> 
+ <value>MSWD</value> 
+ </list> 
+ </constructor-arg>
+     
+ </bean>  
+ 
+ <bean id="studbean" class="com.klef.jfsd.exam.AutoWiring.Student">
+    <constructor-arg value="1"></constructor-arg>
+    <constructor-arg value="SIRI"></constructor-arg>
+    <constructor-arg value="FEMALE"></constructor-arg>
+    <constructor-arg value="CSE"></constructor-arg>
+    <constructor-arg value="3"></constructor-arg>
+    <constructor-arg value="5"></constructor-arg>
+    <constructor-arg ref="marksbean"/>
+    
+    </bean>
+    
+    <bean id="marksbean" class="com.klef.jfsd.exam.AutoWiring.Marks">
+    <constructor-arg value="1"></constructor-arg>
+    <constructor-arg value="SIRI"></constructor-arg>
+    <constructor-arg value="100.0"></constructor-arg>
+    
+    
+    </bean>
+        
+</beans>
